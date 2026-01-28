@@ -1,32 +1,89 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", "Segoe UI", sans-serif;
-}
-
-body {
-  background: linear-gradient(135deg, #1d2671, #c33764);
-  min-height: 100vh;
-  padding: 40px;
-  color: white;
-}
-
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 28px;
-}
-
 .card {
-  position: relative;
-  height: 360px;
-  border-radius: 20px;
+  background: #3c9aff;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 10px 25px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card-image {
+  height: 320px;
   background-size: cover;
   background-position: center;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.movie-year {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.genres {
+  margin: 8px 0;
+}
+
+.genre {
+  display: inline-block;
+  background:(255,255,255,0.15);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-right: 6px;
+}
+
+.movie-cast {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+.nav-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.movie-form {
+  max-width: 420px;
+  background: rgba(0,0,0,0.35);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.movie-form label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+}
+
+.movie-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: none;
+}
+
+.movie-form button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #6fadda;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
 }

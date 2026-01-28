@@ -47,5 +47,3 @@ let textData = `
     <p class="movie-cast">${movies.cast.slice(0, 3).join(", ")}...</p>
   </div>
 `;
-
-card.innerHTML = textData;
