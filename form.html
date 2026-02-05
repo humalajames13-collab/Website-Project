@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
   <title>Add Movie</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Add a Movie</h1>
+<h1>Add a Movie</h1>
 
-  <form class="movie-form">
-    
-    <label>
-      Movie Title
-      <input type="text" name="title" required>
-    </label>
+<form class="movie-form" id="movieForm">
 
-    <label>
-      Year
-      <input type="number" name="year" required>
-    </label>
+  <label>
+    Movie Title
+    <input type="text" id="titleInput" required>
+  </label>
 
+  <label>
+    Year
+    <input type="number" id="yearInput" required>
+  </label>
 
-    <a href="index.html" class="nav-link">← Back to Movies</a>
+  <label>
+    Image URL
+    <input type="text" id="imgInput">
+  </label>
 
-  </form>
+  <button type="submit">Save Movie</button>
+
+  <a href="index.html" class="nav-link">← Back to Movies</a>
+</form>
+
+<script>
+  const form = document.getElementById("movieForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const movie = {
+      title: document.getElementById("titleInput").value,
+      year: document.getElementById("yearInput").value,
+      thumbnail: document.getElementById("imgInput").value,
+      cast: [],
+      genres: []
+    };
+
+    let movies = JSON.parse(localStorage.getItem("movies")) || [];
+    movies.push(movie);
+    localStorage.setItem("movies", JSON.stringify(movies));
+
+    window.location.href = "index.html";
+  });
+</script>
 
 </body>
 </html>

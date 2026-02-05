@@ -47,3 +47,21 @@ let textData = `
     <p class="movie-cast">${movies.cast.slice(0, 3).join(", ")}...</p>
   </div>
 `;
+FormData.addEventListener("submit",function(e){
+  e.preventDefault();
+  let title = titleInput.value;
+  let publisher = devInput.value;
+  let releaseDate = releaseDataInput.value;
+  let gifSrc = gifInput.value;
+  let imgSrc = imgInput.value;
+  let newObj = {
+    "id":getNextId(),
+    "title": title,
+    "publisher":publisher,
+    "releaseDate":releaseDate,
+    "imgSrc":imgSrc,
+    "giftSrc":gifSrc};
+    submitData(newObj);
+    FormData.reset();
+
+  });
