@@ -1,3 +1,14 @@
+body {
+  background:#006aff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
 .card {
   background: #1c599b;
   border-radius: 12px;
@@ -57,7 +68,6 @@
 
 .movie-form {
   max-width: 420px;
-  background: rgba(0,0,0,0.35);
   padding: 24px;
   border-radius: 12px;
 }
