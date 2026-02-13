@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Add Movie</title>
+  <title>Add a movie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -28,31 +28,8 @@
   </label>
 
   <button type="submit">Save Movie</button>
-
-  <a href="index.html" class="nav-link">← Back to Movies</a>
 </form>
 
-<script>
-  const form = document.getElementById("movieForm");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const movie = {
-      title: document.getElementById("titleInput").value,
-      year: document.getElementById("yearInput").value,
-      thumbnail: document.getElementById("imgInput").value,
-      cast: [],
-      genres: []
-    };
-
-    let movies = JSON.parse(localStorage.getItem("movies")) || [];
-    movies.push(movie);
-    localStorage.setItem("movies", JSON.stringify(movies));
-
-    window.location.href = "index.html";
-  });
-</script>
 
 </body>
-</html>
